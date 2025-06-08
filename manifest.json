@@ -1,0 +1,39 @@
+{
+  "name": "AdiosAds",
+  "version": "1.0",
+  "description": "A Chrome extension to block ads and unwanted images on various websites.",
+  "manifest_version": 3,
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "icons/logo_16x16.png",
+      "48": "icons/logo_48x48.png",
+      "128": "icons/logo_128x128.png"
+    },
+    "default_title": "AdiosAds"
+  },
+  "icons": {
+    "16": "icons/logo_16x16.png",
+    "48": "icons/logo_48x48.png",
+    "128": "icons/logo_128x128.png"
+  },
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}
